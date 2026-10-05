@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Valmo Bharosa · Prod Gods · Meesho DICE Challenge</title>
+<meta name="description" content="Three working prototypes from team Prod Gods to reduce RTO (return-to-origin) parcels for Meesho / Valmo.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📦</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --plum: #57134e;
+    --magenta: #b4237d;
+    --ink: #1c1424;
+    --muted: #625a6c;
+    --paper: #ffffff;
+    --tape: #ffcf3f;
+    --line: #e6dfe9;
+    --bg: #f7f4f8;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ink: #f3eef5; --muted: #b8aec0; --paper: #221a29; --line: #3a2f42; --bg: #17111c;
+      --magenta: #e45aa9; --plum: #f0b6dc;
+    }
+  }
+  *, *::before, *::after { box-sizing: inherit; }
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: "Archivo", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size: 1.0625rem; line-height: 1.55;
+  }
+  .wrap { max-width: 60rem; margin: 0 auto; padding: 0 1.25rem; }
+
+  header.top {
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: .5rem;
+    padding: 1.25rem 0; color: var(--muted); font-size: .95rem;
+  }
+  header.top strong { color: var(--ink); font-weight: 700; }
+
+  .hero { padding: 3rem 0 2.5rem; }
+  .hero h1 {
+    font-stretch: 125%; font-weight: 900; line-height: .95; letter-spacing: -.02em;
+    font-size: clamp(2.6rem, 8vw, 5.4rem); margin: 0 0 1.25rem; color: var(--plum);
+  }
+  .hero h1 .strike {
+    position: relative; display: inline-block; color: var(--muted); font-weight: 800;
+  }
+  .hero h1 .strike::after {
+    content: ""; position: absolute; left: -2%; right: -2%; top: 52%; height: .14em;
+    background: var(--magenta); transform: rotate(-3deg);
+  }
+  .hero p { max-width: 38rem; margin: 0; font-size: 1.15rem; color: var(--ink); }
+  .hero p + p { margin-top: .75rem; color: var(--muted); font-size: 1rem; }
+
+  .solutions { display: grid; gap: 1.25rem; padding-bottom: 3rem; }
+  .label {
+    position: relative; background: var(--paper); border: 2px solid var(--ink);
+    border-radius: 6px; padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+    display: grid; grid-template-columns: 1fr auto; gap: 1rem 2rem; align-items: center;
+  }
+  .label::before {           /* parcel tape strip */
+    content: ""; position: absolute; top: -2px; bottom: -2px; left: 2.25rem; width: 1.1rem;
+    background: var(--tape); opacity: .9;
+  }
+  .label > * { position: relative; }
+  .label .body { padding-left: 2.6rem; }
+  .label h2 {
+    margin: 0 0 .35rem; font-stretch: 112%; font-weight: 800; font-size: 1.6rem; line-height: 1.1;
+  }
+  .label .what { margin: 0 0 .5rem; max-width: 34rem; }
+  .label .url { margin: 0; font-size: .9rem; color: var(--muted); word-break: break-all; }
+
+  a.open {
+    display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+    min-height: 3.25rem; padding: .85rem 1.5rem; border-radius: 6px;
+    background: var(--magenta); color: #fff; text-decoration: none;
+    font-weight: 700; font-size: 1.05rem; white-space: nowrap;
+    transition: background .15s, transform .15s;
+  }
+  a.open:hover { background: var(--plum); color: var(--paper); }
+  a.open:active { transform: translateY(1px); }
+  a.open:focus-visible, .top a:focus-visible { outline: 3px solid var(--tape); outline-offset: 3px; }
+
+  .note {
+    border-top: 2px solid var(--line); padding: 1.5rem 0 3rem; color: var(--muted); font-size: .95rem;
+  }
+  .note h3 { color: var(--ink); font-size: 1rem; margin: 0 0 .4rem; }
+  .note p { margin: 0 0 1rem; max-width: 40rem; }
+  .note a { color: var(--magenta); }
+
+  @media (max-width: 640px) {
+    .label { grid-template-columns: 1fr; padding: 1.25rem; }
+    .label::before { left: 1.25rem; width: .8rem; }
+    .label .body, .label .cta { padding-left: 1.9rem; }
+    a.open { width: 100%; }
+  }
+  @media (prefers-reduced-motion: reduce) { a.open { transition: none; } }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <span><strong>Team Prod Gods</strong>, IIT Kanpur</span>
+      <span>Meesho DICE Challenge: RTO reduction</span>
+    </header>
+
+    <section class="hero">
+      <h1><span class="strike">Return to origin.</span><br>Delivered.</h1>
+      <p>Valmo Bharosa is our plan to cut RTO, the parcels that travel all the way to a customer and come back undelivered. It has three working prototypes. Open any one below.</p>
+      <p>Each prototype opens in a new tab and runs live in your browser. Nothing to install.</p>
+    </section>
+
+    <main class="solutions">
+      <!-- EDIT the descriptions below if needed. Each block = one prototype. -->
+
+      <article class="label">
+        <div class="body">
+          <h2>Valmo Pakka</h2>
+          <p class="what">Checks that an order is genuine and the buyer is ready to receive it, before the parcel leaves the warehouse.</p>
+          <p class="url">valmo-pakka.streamlit.app</p>
+        </div>
+        <div class="cta">
+          <a class="open" href="https://valmo-pakka.streamlit.app/" target="_blank" rel="noopener">Open Valmo Pakka</a>
+        </div>
+      </article>
+
+      <article class="label">
+        <div class="body">
+          <h2>Valmo Pata</h2>
+          <p class="what">Turns messy Indian addresses into precise DIGIPIN locations, so the delivery agent reaches the right door the first time.</p>
+          <p class="url">valmo-pata.streamlit.app</p>
+        </div>
+        <div class="cta">
+          <a class="open" href="https://valmo-pata.streamlit.app/" target="_blank" rel="noopener">Open Valmo Pata</a>
+        </div>
+      </article>
+
+      <article class="label">
+        <div class="body">
+          <h2>Valmo Wapas Nahi</h2>
+          <p class="what">When a buyer refuses a parcel, finds a nearby buyer to resell it locally instead of shipping it back to the seller.</p>
+          <p class="url">prodgods-rto-demo.onrender.com</p>
+        </div>
+        <div class="cta">
+          <a class="open" href="https://prodgods-rto-demo.onrender.com/present" target="_blank" rel="noopener">Open Valmo Wapas Nahi</a>
+        </div>
+      </article>
+    </main>
+
+    <footer class="note">
+      <h3>If a prototype takes a while to load</h3>
+      <p>These apps run on free hosting that sleeps when idle. The first visit can take 30 to 60 seconds to wake up. On Streamlit, click "Yes, get this app back up" if prompted, then wait. Later visits load quickly.</p>
+      <p>Source code and setup: see the <a href="./README.md">README</a> in this repository.</p>
+    </footer>
+  </div>
+</body>
+</html>
