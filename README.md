@@ -6,7 +6,7 @@ RTO (return-to-origin) parcels are orders that reach the customer but come back 
 
 ## 👉 Live landing page
 
-**https://pruthav23.github.io/valmo-bharosa/**
+**https://pruthav23.github.io/prod-gods-valmo-bharosa/**
 
 One page, three buttons, one per prototype.
 
