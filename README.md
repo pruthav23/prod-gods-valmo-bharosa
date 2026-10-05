@@ -18,6 +18,16 @@ One page, three buttons, one per prototype.
 | **Valmo Pata** | Converts messy addresses into precise DIGIPIN locations for first-attempt delivery | https://valmo-pata.streamlit.app/ |
 | **Valmo Wapas Nahi** | Resells refused parcels to nearby buyers instead of shipping them back | https://prodgods-rto-demo.onrender.com/present |
 
+## Source code
+
+Each prototype has its own repository:
+
+| Prototype | Source code |
+|---|---|
+| **Valmo Pakka** | https://github.com/mansis23/valmo-pakka |
+| **Valmo Pata** | https://github.com/pruthav23/valmo-pata |
+| **Valmo Wapas Nahi** | https://github.com/basudevm23/dice-s3-proto |
+
 ## Note for reviewers
 
 The apps are on free hosting and sleep when idle. The **first load can take 30–60 seconds**. On Streamlit, click *"Yes, get this app back up"* if shown.
@@ -28,4 +38,4 @@ It is a single static file. Open `index.html` in any browser. No build step.
 
 ## Team
 
-Prod Gods – Basudev Mohapatra ([@basudevm23](https://github.com/basudevm23)), Mansi Shyam Ghodke [@mansis23](https://github.com/mansis23)), Prutha Vinay ([@pruthav23](https://github.com/pruthav23))
+Prod Gods – Basudev Mohapatra ([@pruthav23](https://github.com/pruthav23)) and team.
