@@ -28,4 +28,4 @@ It is a single static file. Open `index.html` in any browser. No build step.
 
 ## Team
 
-Prod Gods – Basudev Mohapatra ([@pruthav23](https://github.com/pruthav23)) and team.
+Prod Gods – Basudev Mohapatra ([@basudevm23](https://github.com/basudevm23)), Mansi Shyam Ghodke, Prutha Vinay ([@pruthav23](https://github.com/pruthav23))
